@@ -126,5 +126,4 @@ def signup():
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
-
-app.run(debug=True,host='0.0.0.0')
+app.run()
