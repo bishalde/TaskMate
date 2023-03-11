@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/homepage">
+      <div class="logo">TaskMate</div>
+    </a>
+      <nav class="nav-bar">
+        <ul>
+          <li class="active"><a href="#">Todo</a></li>
+          <li><a href="#">Project</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+      <div class="options">
+        <a href="#"><img src="/static/images/icons8-moon-and-stars-48.png" alt="" /></a>
+        <a href="#"><img src="/static/images/user3d.png" alt="" /></a>
+      </div>
+    </header>
+    {% block body %}
+        
+    {% endblock body %}
+
+</body>
+</html>

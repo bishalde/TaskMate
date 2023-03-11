@@ -1,5 +1,6 @@
 from flask import *
 import mysql.connector
+from werkzeug import secure_filename
 
 
 mydb = mysql.connector.connect(
@@ -21,32 +22,59 @@ mycursor.execute("""
                     filename varchar(255)
                 )                
 ;""")
+mycursor.execute("""CREATE TABLE IF NOT EXISTS todo_users(
+                    username VARCHAR(255) NOT NULL PRIMARY KEY,
+                    password VARCHAR(255) NOT NULL
+);
+""")
 
 app = Flask(__name__)
+app.secret_key = 'bishalde5741'
 
-@app.route("/",methods=["GET","POST"])
+@app.route('/homepage',methods=['POST','GET'])
 def homepage():
-    if(request.method == "POST"):
-        date=request.form.get('date')
-        time=request.form.get('time')
-        priority=request.form.get('priority')
-        description=request.form.get('description')
-        file=request.form.get('file')
+    if 'username' in session:
+        user=session['username']
+        if(request.method == "POST"):
+            user=session['username']
+            date=request.form.get('date')
+            time=request.form.get('time')
+            priority=request.form.get('priority')
+            description=request.form.get('description')
+            file=request.form.get('file')
+            
+            sql="""
+                INSERT INTO `todo_data` (`deadline`,`user_id` ,`deadlinetime`, `priority`, `description`,`filename`) 
+                VALUES ('{}','{}' ,'{}', '{}', '{}','{}')
+            ;""".format(date,user,time,priority,description,file)
+            mycursor.execute(sql)
+            mydb.commit()
 
         sql="""
-            INSERT INTO `todo_data` (`deadline`, `deadlinetime`, `priority`, `description`,`filename`) 
-            VALUES ('{}', '{}', '{}', '{}','{}')
-        ;""".format(date,time,priority,description,file)
+            SELECT * FROM todo_data WHERE user_id='{}' ORDER BY deadline,deadlinetime,priority DESC;
+        ;""".format(user)
         mycursor.execute(sql)
-        mydb.commit()
+        a=mycursor.fetchall()
+        data={'todo':a}
+        return render_template('index.html',data=data)
+    else:
+        return redirect(url_for("login"))
 
-    sql="""
-        SELECT * FROM todo_data ORDER BY deadline,deadlinetime,priority DESC;
-    ;"""
-    mycursor.execute(sql)
-    a=mycursor.fetchall()
-    data={'todo':a}
-    return render_template('index.html',data=data)
+@app.route("/",methods=["GET","POST"])
+def login():
+    if request.method=="POST":
+        username=request.form["username"]
+        password=request.form["password"]
+
+        sql="SELECT * FROM todo_users WHERE username ='{}' && password='{}';".format(username,password)
+        mycursor.execute(sql)
+        data=mycursor.fetchall()
+        if len(data)>0:
+            session['username'] = username
+            return redirect(url_for('homepage'))
+        else:
+            return render_template('login.html',error="Credentials not found..!")
+    return render_template('login.html',error=None)
 
 @app.route("/delete/<int:idd>",methods=["GET","POST"])
 def delete(idd):
@@ -54,4 +82,9 @@ def delete(idd):
     mycursor.execute(sql)
     return redirect(url_for('homepage'))
 
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
 app.run(debug=True,host='0.0.0.0')

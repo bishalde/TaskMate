@@ -1,32 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/style.css">
-    <title>TaskMate-HomePage</title>
-  </head>
-  <body>
-    <header class="header">
-      <a href="/">
-      <div class="logo">TaskMate</div>
-    </a>
-      <nav class="nav-bar">
-        <ul>
-          <li class="active"><a href="#"></a>Todo</li>
-          <li><a href="#"></a>Project</li>
-          <li><a href="#"></a>Team</li>
-        </ul>
-      </nav>
-      <div class="options">
-        <a href="#"><img src="/static/images/icons8-moon-and-stars-48.png" alt="" /></a>
-        <a href="#"><img src="/static/images/user3d.png" alt="" /></a>
-      </div>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}
+    TaskMate-Homepage
+{% endblock title %}
+
+{% block body %}
     <main class="main-content">
       <div class="side1">
-        <a href="">        <div class="side1-1 menu active">
+        <h1>Hey, {{session['username']}}</h1>
+        <a href="">        
+          <div class="side1-1 menu active">
             <svg
               width="18"
               height="21"
@@ -103,7 +86,7 @@
         </div>
 
 
-        <form action="/" method="post">
+        <form action="/homepage" method="post">
 
           <input type="date" name="date" id="date">
           <input type="time" name="time" id="time">
@@ -135,5 +118,4 @@
       </form>                      
       </div>
     </main>
-  </body>
-</html>
+  {% endblock body %}
