@@ -1,5 +1,9 @@
+import os
+import shutil
 from flask import *
 import mysql.connector
+from fileinput import filename
+import datetime
 
 
 
@@ -13,10 +17,10 @@ import mysql.connector
 #Online Database
 
 mydb = mysql.connector.connect(
-    host="sql.freedb.tech",
-    user="freedb_bishal",
-    password="$7RDMM6tWX&uJqF",
-    database="freedb_bishop",
+    host="db4free.net",
+    user="bishalde",
+    password="8299260163",
+    database="clustix"
 )
 
 mycursor = mydb.cursor()
@@ -40,9 +44,11 @@ mycursor.execute("""CREATE TABLE IF NOT EXISTS todo_users(
 app = Flask(__name__)
 app.secret_key = 'bishalde5741'
 
+
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
     if 'username' in session:
+
         user=session['username']
         if(request.method == "POST"):
             user=session['username']
@@ -50,12 +56,19 @@ def homepage():
             time=request.form.get('time')
             priority=request.form.get('priority')
             description=request.form.get('description')
-            file=request.form.get('file')
-            
+            f = request.files['file']
+            f.save(f.filename)
+
+            old_file = '/{}'.format(f.filename)
+            destination = '/static/'
+
+            shutil.move(old_file, destination)
+
             sql="""
                 INSERT INTO `todo_data` (`deadline`,`user_id` ,`deadlinetime`, `priority`, `description`,`filename`) 
                 VALUES ('{}','{}' ,'{}', '{}', '{}','{}')
-            ;""".format(date,user,time,priority,description,file)
+            ;""".format(date,user,time,priority,description,f.filename)
+
             mycursor.execute(sql)
             mydb.commit()
 
@@ -117,4 +130,5 @@ def signup():
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
+
 app.run(debug=True,host='0.0.0.0')
