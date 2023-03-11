@@ -2,8 +2,6 @@ from flask import *
 import mysql.connector
 
 
-
-
 # mydb = mysql.connector.connect(
 #     host="localhost",
 #     user="bishalde",
@@ -13,11 +11,18 @@ import mysql.connector
 
 #Online Database
 
+# mydb = mysql.connector.connect(
+#     host="db4free.net",
+#     user="bishalde",
+#     password="8299260163",
+#     database="clustix"
+# )
+
 mydb = mysql.connector.connect(
-    host="db4free.net",
-    user="bishalde",
-    password="8299260163",
-    database="clustix"
+    host="sql.freedb.tech",
+    user="freedb_bishop",
+    password="@g8qXq!AQXj!G&@",
+    database="freedb_clustix"
 )
 
 mycursor = mydb.cursor()
