@@ -11,18 +11,11 @@ import mysql.connector
 
 #Online Database
 
-# mydb = mysql.connector.connect(
-#     host="db4free.net",
-#     user="bishalde",
-#     password="8299260163",
-#     database="clustix"
-# )
-
 mydb = mysql.connector.connect(
-    host="sql.freedb.tech",
-    user="freedb_bishop",
-    password="@g8qXq!AQXj!G&@",
-    database="freedb_clustix"
+    host="db4free.net",
+    user="bishalde",
+    password="8299260163",
+    database="clustix"
 )
 
 mycursor = mydb.cursor()
