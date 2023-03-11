@@ -1,9 +1,6 @@
-import os
-import shutil
 from flask import *
 import mysql.connector
-from fileinput import filename
-import datetime
+
 
 
 
@@ -57,12 +54,6 @@ def homepage():
             priority=request.form.get('priority')
             description=request.form.get('description')
             f = request.files['file']
-            f.save(f.filename)
-
-            old_file = '/{}'.format(f.filename)
-            destination = '/static/'
-
-            shutil.move(old_file, destination)
 
             sql="""
                 INSERT INTO `todo_data` (`deadline`,`user_id` ,`deadlinetime`, `priority`, `description`,`filename`) 
