@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --window-bg: rgb(222, 210, 252);
+  /* --fontstyle: 'Poppins', sans-serif; */
+  --fontstyle: "Roboto", sans-serif;
+  --fontsize: 15px;
+}
+
+* {
+  font-family: var(--fontstyle);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--fontsize);
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+body {
+  background-color: var(--window-bg);
+  padding: 30px 70px;
+
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  border-radius: 10px;
+}
+
+header > a>div.logo {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 23px;
+  color: #9333ea;
+}
+.nav-bar > ul {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-bar > ul > li {
+  list-style: none;
+  margin: 0 30px;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  line-height: 19px;
+  color: #6b7280;
+}
+.nav-bar > ul > li.active {
+  color: #9333ea;
+}
+
+.options > a {
+  margin: 0 10px;
+}
+.options > a > img {
+  height: 40px;
+  width: 40px;
+}
+
+.main-content {
+  margin: 4% 0% 4% 2%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content > .side1 {
+  display: flex;
+  flex-direction: column;
+}
+.main-content > .side1 > a > .menu {
+  padding: 20px;
+  width: 20vw;
+  margin-top: 2%;
+  border-radius: 5px;
+}
+.main-content > .side1 > a > .menu > svg {
+  float: left;
+}
+
+.main-content > .side1 > a > .menu > h3 {
+  margin: 0 40px;
+  font-size: 1.3rem;
+}
+
+.main-content > .side1 > a > .menu.active,
+.main-content > .side1 > a > .menu:hover {
+  background: rgba(147, 51, 234, 0.06);
+  color: #9333ea;
+  transition: 0.5s ease;
+}
+.main-content > .side1 > a {
+  color: #6b7280;
+}
+
+.main-content > .side1 > a.down {
+  margin-top: 85%;
+}
+
+.main-content > .side2 {
+  background-color: white;
+  height: 80vh;
+  width: 65vw;
+  border-radius: 10px;
+  margin: 0 2%;
+}
+.side2 > .todo-box {
+  height: 60vh;
+  width: 65vw;
+  overflow: scroll;
+}
+.side2 > .todo-box::-webkit-scrollbar{
+  visibility: hidden;
+}
+.side2 .task {
+  margin: 1.2% 2%;
+  padding: 2%;
+  position: relative;
+}
+.task>.btns{
+  display: block;
+  float: right;
+}
+.task >.btns>a>svg {
+  padding: 4px;
+  height: 30%;
+  width: 30%;
+  float: right;
+  position: relative;
+  margin-top: -30px;
+}
+.task > h3 {
+  font-family: "Roboto";
+  font-size: 2rem;
+  margin-bottom: 3px;
+  color: #404040;
+}
+.task > h5 {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: black;
+  display: inline-block;
+}
+.task > a {
+  margin: 0 0.5%;
+}
+
+.side2>form> input[type=text]{
+    font-family: var(--fontstyle);
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 3%;
+    margin-right: auto;
+    width: 80%;
+    padding: 10px 10px;
+    background: #F3F3F3;
+    border-radius: 5px;
+    border-width: 0px;
+    color: #9333ea;
+}
+.side2>form>input[type=date],input[type=time]{
+  font-family: var(--fontstyle);
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: 1%;
+  margin-left: 3%;
+  margin-right: auto;
+  width: 30%;
+  padding: 10px 10px;
+  background: #F3F3F3;
+  border-radius: 5px;
+  border-width: 0px;
+  color: #9333ea;
+}
+.side2>form>label{
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  color: #000000;
+  margin: 10px;
+}
+
+.side2 >form>input[type=file],input[type=submit]{
+  display: none;
+}
+
+.side2 >form>input[type=date],input[type=time]:hover{
+  border: 2px solid #9333ea;
+}
+
+.side2 >form>input[type=text]:hover{
+    border: 2px solid #9333ea;
+}
+
+.side2 >form>select{
+  padding: 10px 10px;
+  background: #F3F3F3;
+  border-radius: 5px;
+  border-width: 0px;
+  color: #9333ea;
+}
+.side2 >form>select:hover{
+  border: 2px solid #9333ea;
+}
+.side2 >form>input[type=submit]{
+  display: none;
+}
+.side2 >form>label>svg{
+    display: inline-block;
+}
