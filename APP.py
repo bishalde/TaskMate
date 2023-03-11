@@ -1,13 +1,22 @@
 from flask import *
 import mysql.connector
-from werkzeug import secure_filename
 
+
+
+# mydb = mysql.connector.connect(
+#     host="localhost",
+#     user="bishalde",
+#     password="bishalde",
+#     database="flask_todo"
+# )
+
+#Online Database
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="bishalde",
-    password="bishalde",
-    database="flask_todo"
+    host="sql.freedb.tech",
+    user="freedb_bishal",
+    password="$7RDMM6tWX&uJqF",
+    database="freedb_bishop",
 )
 
 mycursor = mydb.cursor()
@@ -51,7 +60,7 @@ def homepage():
             mydb.commit()
 
         sql="""
-            SELECT * FROM todo_data WHERE user_id='{}' ORDER BY deadline,deadlinetime,priority DESC;
+            SELECT * FROM todo_data WHERE user_id='{}' ORDER BY deadline,deadlinetime DESC,priority ASC;
         ;""".format(user)
         mycursor.execute(sql)
         a=mycursor.fetchall()
@@ -82,6 +91,27 @@ def delete(idd):
     mycursor.execute(sql)
     return redirect(url_for('homepage'))
 
+@app.route('/signup',methods=['POST','GET'])
+def signup():
+    if request.method=="POST":
+        username=request.form["username"]
+        password=request.form["password"]
+        sql="SELECT * FROM todo_users WHERE username ='{}';".format(username)
+        mycursor.execute(sql)
+        data=mycursor.fetchall()
+        if len(data)>0:
+            error="Username already In USE...!"
+            return render_template('signup.html',error=error)
+        
+        sql="INSERT INTO todo_users VALUES('{}','{}');".format(username,password)
+        print(username,password)
+        mycursor.execute(sql)
+        mydb.commit()
+        error="CREATED"
+        return render_template('signup.html',error=error)
+
+    error=None
+    return render_template('signup.html',error=error)
 
 @app.route('/logout')
 def logout():

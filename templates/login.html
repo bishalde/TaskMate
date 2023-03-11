@@ -11,17 +11,17 @@
     </div>    
     {% endif %}
     <div class="login-box">
-        <form action="" method="post">
+        <form action="/" method="post">
         <h1>Login Here</h1>
         <br>
         <label for="username">Username </label>
-        <input type="text" autofocus placeholder="Enter Username" name="username">
+        <input autocomplete="off" type="text" autofocus placeholder="Enter Username" name="username">
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password" name="password">
+        <input autocomplete="off" type="password" placeholder="Enter Password" name="password">
         <a class="reset-password" href="/resetPassword" target="_blank" r>Reset Password</a>
-        <div class="btns">
+        <div class="btnss">
         <button type="submit">Login</button>
-        <button class="res"type="reset">Reset</button>
+        <a class="ress" href="/signup" >Signup</a>
         </div>
     </form>
     </div>

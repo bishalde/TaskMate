@@ -86,7 +86,7 @@
         </div>
 
 
-        <form action="/homepage" method="post">
+        <form action="/homepage" method="post" enctype="multipart/form-data">
 
           <input type="date" name="date" id="date">
           <input type="time" name="time" id="time">
@@ -97,7 +97,7 @@
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
-          <option value="5">5</option>
+          <option selected value="5">5</option>
         </select>
 
         <input autofocus type="text" placeholder="Add Todo" name="description" id="description">

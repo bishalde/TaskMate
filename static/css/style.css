@@ -290,14 +290,13 @@ header > a>div.logo {
   color: #9333ea;
 }
 
-.login-box .btns{
+.login-box .btnss{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 
 }
-
-.login-box button{
+.login-box>form>.btnss>button,.login-box>form>.btnss>a{
   padding: 2%;  
   width: 80px;
   border-radius: 10%;
@@ -306,7 +305,6 @@ header > a>div.logo {
   color: white;
   margin: 2%;
 }
-
-.login-box .res{
+.login-box>form>.btnss>a.ress{
   background-color: red;
 }
