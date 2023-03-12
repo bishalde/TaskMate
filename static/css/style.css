@@ -24,6 +24,13 @@ body {
   padding: 30px 70px;
 
 }
+body>h1{
+  display: inline-block;
+  font-size: 2rem;
+  top:50px;
+  padding-top: 3%;
+  padding-left: 3%;
+}
 
 header {
   background-color: white;
@@ -47,6 +54,7 @@ header > a>div.logo {
 .nav-bar > ul {
   display: flex;
   justify-content: space-between;
+
 }
 .nav-bar > ul > li{
 
@@ -177,6 +185,7 @@ header > a>div.logo {
     border-width: 0px;
     color: #9333ea;
 }
+
 .side2>form>input[type=date],input[type=time]{
   font-family: var(--fontstyle);
   font-size: 1.5rem;
@@ -191,6 +200,7 @@ header > a>div.logo {
   border-width: 0px;
   color: #9333ea;
 }
+
 .side2>form>label{
   font-family: "Roboto";
   font-size: 1.3rem;
@@ -307,4 +317,210 @@ header > a>div.logo {
 }
 .login-box>form>.btnss>a.ress{
   background-color: red;
+
+}
+
+
+@media screen and (max-width:900px) {
+      :root{
+        --fontsize: 11px;
+      }
+
+      body {
+        padding: 20px 20px;
+      }
+
+      header {
+        width: 100%;
+        height: 70px;
+        padding: 0 15px;
+
+      }
+
+      .nav-bar > ul > li>a {
+        margin: 0 10px;
+
+      }
+
+      .options > a {
+        margin: 0 10px;
+      }
+
+      .options > a > img {
+        height: 30px;
+        width: 30px;
+      }
+
+      .error-message{
+        width: 60vw;
+        margin-top: 3%;
+        padding: 2%;
+      
+      }
+      .login-box{
+        width: 60vw;
+        margin-top: 3%;
+      }
+
+}
+
+
+@media screen and (max-width:600px) {
+  :root{
+    --fontsize: 11px;
+  }
+
+  body {
+    padding: 10px 10px;
+  }
+
+  header {
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+
+  }
+
+  .nav-bar > ul > li>a {
+    margin: 0 4px;
+
+  }
+
+  .options > a {
+    margin: 0 2px;
+  }
+
+  .options > a > img {
+    height: 25px;
+    width: 25px;
+  }
+
+  .error-message{
+    height: 30px;
+    width: 80vw;
+    margin-top: 10%;
+    padding: px;
+  
+  }
+  .login-box{
+    width: 80vw;
+    margin-top: 10%;
+    height: 400px;
+  }
+
+  .login-box h1{
+    font-family: "Roboto";
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+  }
+  .login-box>form>.btnss>button,.login-box>form>.btnss>a{
+    padding: 5%;  
+    width: 90px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;;
+    border-width: 0;
+    background-color: #9333ea;
+    color: white;
+    margin: 2%;
+    margin-top: 20px;
+  }
+  .main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content > .side1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:8px;
+  }
+
+  body>h1{
+    display: inline-block;
+    font-size: 2rem;
+    top:50px;
+    padding-top: 3%;
+    padding-left: 3%;
+  }
+  .main-content > .side1 > a > .menu > svg {
+    float: left;
+    height: 15px;
+    width: 15px;
+  }
+
+  .main-content > .side1 > a.down {
+    margin-top: 0%;
+  }
+  .main-content > .side1 > a > .menu {
+    padding: 10px;
+    width: 20vw;
+    border-radius: 5px;
+  }
+
+  .main-content > .side1 > a > .menu > h3 {
+      margin: 0 20px;
+      font-size: 1rem;
+  }
+
+  .main-content > .side2 {
+    background-color: white;
+    height: 80vh;
+    width: 90vw;
+    border-radius: 10px;
+    margin: 0 1%;
+  }
+
+  .side2 > .todo-box {
+    height: 60vh;
+    width: 90vw;
+    overflow: scroll;
+  }
+
+  .task > h3 {
+    font-family: "Roboto";
+    font-size: 1.7rem;
+    margin-bottom: 3px;
+    color: #404040;
+  }
+
+  .task > h5 {
+    font-family: "Roboto";
+    font-size: 1.2rem;
+    color: black;
+    display: inline-block;
+  }
+
+  .side2>form> input[type=text]{
+    font-size: 1.5rem;
+    margin-top: 2%;
+    margin-left: 3%;
+    width: 70%;
+    padding: 8px 8px;
+  }
+
+  .side2>form>input[type=date],input[type=time]{
+    font-size: 1rem;
+    width: 25%;
+    padding: 8px 8px;
+  }
+
+  .side2 >form>label>svg{
+    height: 20px;
+    width: 20px;
+  }
+  
+  .side2>form>label{
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: #000000;
+    margin: 10px;
+  }
+
+
 }

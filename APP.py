@@ -2,21 +2,21 @@ from flask import *
 import mysql.connector
 
 
-# mydb = mysql.connector.connect(
-#     host="localhost",
-#     user="bishalde",
-#     password="bishalde",
-#     database="flask_todo"
-# )
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="bishalde",
+    password="bishalde",
+    database="flask_todo"
+)
 
 #Online Database
 
-mydb = mysql.connector.connect(
-    host="db4free.net",
-    user="bishalde",
-    password="8299260163",
-    database="clustix"
-)
+# mydb = mysql.connector.connect(
+#     host="db4free.net",
+#     user="bishalde",
+#     password="8299260163",
+#     database="clustix"
+# )
 
 mycursor = mydb.cursor()
 mycursor.execute("""
@@ -119,4 +119,4 @@ def signup():
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
-app.run()
+app.run(debug=True,host='0.0.0.0')

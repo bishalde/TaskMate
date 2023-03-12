@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "db4free.net",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Db4net",
+            "password": "8299260163",
+            "username": "bishalde",
+            "database": "clustix"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "flask_todo",
+            "username": "bishalde",
+            "password": "bishalde",
+            "name": "TaskMate_DB"
+        }
+    ]
+}
