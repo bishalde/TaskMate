@@ -19,6 +19,7 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
+mycursor.execute("""CREATE DATABASE IF NOT EXISTS flask_todo;""")
 mycursor.execute("""
                 CREATE TABLE IF NOT EXISTS todo_data(
                     id INTEGER PRIMARY KEY AUTO_INCREMENT,
