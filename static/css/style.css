@@ -250,7 +250,7 @@ header > a>div.logo {
 }
 .login-box{
   background-color: white;
-  height: 70vh;
+  height: 75vh;
   width: 50vw;
   border-radius: 10px;
   display: block;
@@ -274,7 +274,7 @@ header > a>div.logo {
   margin-bottom: 2%;
   
 }
-.login-box input[type="text"],input[type="password"]{
+.login-box input[type="text"],input[type="password"],input[type="email"]{
   font-family: var(--fontstyle);
   font-size: 1.5rem;
   display: block;
@@ -287,7 +287,7 @@ header > a>div.logo {
   color: #9333ea;
   margin-bottom: 4%;
 }
-.login-box input[type="text"]:hover,input[type="password"]:hover{
+.login-box input[type="text"]:hover,input[type="password"]:hover,input[type="email"]:hover{
   border: 2px solid #9333ea;
 }
 

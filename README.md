@@ -52,6 +52,7 @@ python APP.py
 
 ![App Screenshot](SCREENSHOTS/TaskMate-Login.png)
 ![App Screenshot](SCREENSHOTS/TaskMate-Signup.png)
+![App Screenshot](SCREENSHOTS/TaskMate-reset.png)
 ![App Screenshot](SCREENSHOTS/TaskMate-Homepage.png)
 ![App Screenshot](SCREENSHOTS/TaskMate-Login1.png)
 ![App Screenshot](SCREENSHOTS/TaskMate-Signup1.png)
