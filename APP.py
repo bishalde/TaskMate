@@ -150,7 +150,6 @@ def logout():
 
 
 
-
 """--------------------------ENDPOINT for RESETPASSWORD--------------------------"""
 @app.route('/resetPassword',methods=['POST','GET'])
 def resetPassword():
@@ -159,9 +158,11 @@ def resetPassword():
         return render_template('resetpassword.html',error=error)
     return render_template('resetpassword.html',error=None)
     
-
-
-
+"""--------------------------ENDPOINT for EDIT todo"""
+@app.route('/edit/<int:id>',methods=['POST','GET'])
+def editTodo(id):
+    data={}
+    return render_template('edittodo.html',data=data)
 
 
 app.run()
