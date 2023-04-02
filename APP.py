@@ -21,7 +21,7 @@ mydb = mysql.connector.connect(
 """---------------------------------Table creation Code-----------------------------------"""
 mycursor = mydb.cursor()
 mycursor.execute("""
-                CREATE TABLE IF NOT EXISTS todo_data(
+                CREATE TABLE IF NOT EXISTS Taskmate_data(
                     id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     user_id varchar(255) ,
                     deadline DATE NOT NULL,
@@ -31,7 +31,7 @@ mycursor.execute("""
                     filename varchar(255)
                 )                
 ;""")
-mycursor.execute("""CREATE TABLE IF NOT EXISTS todo_users(
+mycursor.execute("""CREATE TABLE IF NOT EXISTS Taskmate_users(
                     username VARCHAR(255) NOT NULL PRIMARY KEY,
                     password VARCHAR(255) NOT NULL,
                     email VARCHAR(255) NOT NULL UNIQUE NOT NULL
@@ -58,7 +58,7 @@ def homepage():
 
             #insert data into table
             sql="""
-                INSERT INTO `todo_data` (`deadline`,`user_id` ,`deadlinetime`, `priority`, `description`,`filename`) 
+                INSERT INTO `Taskmate_data` (`deadline`,`user_id` ,`deadlinetime`, `priority`, `description`,`filename`) 
                 VALUES ('{}','{}' ,'{}', '{}', '{}','{}')
             ;""".format(date,user,time,priority,description,f.filename)
 
@@ -68,7 +68,7 @@ def homepage():
 
         #show all the data form the table
         sql="""
-            SELECT * FROM todo_data WHERE user_id='{}' ORDER BY deadline,deadlinetime DESC,priority ASC;
+            SELECT * FROM Taskmate_data WHERE user_id='{}' ORDER BY deadline,deadlinetime DESC,priority ASC;
         ;""".format(user)
         mycursor.execute(sql)
         a=mycursor.fetchall()
@@ -89,7 +89,7 @@ def login():
 
 
         #Search fo the username
-        sql="SELECT * FROM todo_users WHERE username ='{}' && password='{}';".format(username,password)
+        sql="SELECT * FROM Taskmate_users WHERE username ='{}' && password='{}';".format(username,password)
         mycursor.execute(sql)
         data=mycursor.fetchall()
         if len(data)>0:
@@ -103,7 +103,7 @@ def login():
 """--------------------------ENDPOINT for delete a todo item------------------------"""
 @app.route("/delete/<int:idd>",methods=["GET","POST"])
 def delete(idd):
-    sql="DELETE FROM todo_data WHERE id ='{}';".format(idd)
+    sql="DELETE FROM Taskmate_data WHERE id ='{}';".format(idd)
     mycursor.execute(sql)
     return redirect(url_for('homepage'))
 
@@ -117,7 +117,7 @@ def signup():
         password=request.form["password"]
 
         #check if username/email already exists
-        sql="SELECT * FROM todo_users WHERE username ='{}' || email='{}';".format(username,email)
+        sql="SELECT * FROM Taskmate_users WHERE username ='{}' || email='{}';".format(username,email)
         mycursor.execute(sql)
         data=mycursor.fetchall()
         if len(data)>0:
@@ -126,7 +126,7 @@ def signup():
         
         #to add new user
         try:
-            sql="INSERT INTO todo_users VALUES('{}','{}','{}');".format(username,password,email)
+            sql="INSERT INTO Taskmate_users VALUES('{}','{}','{}');".format(username,password,email)
             print(username,password)
             mycursor.execute(sql)
             mydb.commit()
