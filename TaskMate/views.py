@@ -1,19 +1,19 @@
 import mysql.connector
 from django.shortcuts import render,redirect
 
-# mydb = mysql.connector.connect(
-#     host="localhost",
-#     user="bishalde",
-#     password="bishalde",
-#     database="flask_todo"
-# )
-
 mydb = mysql.connector.connect(
-    host="db4free.net",
+    host="localhost",
     user="bishalde",
-    password="8299260163",
-    database="clustix"
+    password="bishalde",
+    database="flask_todo"
 )
+
+# mydb = mysql.connector.connect(
+#     host="db4free.net",
+#     user="bishalde",
+#     password="8299260163",
+#     database="clustix"
+# )
 
 """---------------------------------Table creation Code-----------------------------------"""
 mycursor = mydb.cursor()
