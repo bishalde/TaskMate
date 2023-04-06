@@ -5,13 +5,14 @@
 {% endblock title %}
 
 {% block body %}
-    {% if error!=None %}  
+    {% if error != None %}  
     <div class="error-message">
         {{ error }}
     </div>    
     {% endif %}
     <div class="login-box">
-        <form action="/signup" method="post">
+        <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
         <h1>Signup Here</h1>
         <br>
         <label for="username">Username </label>

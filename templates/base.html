@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>
         {% block title %}
         {% endblock title %}
@@ -12,7 +13,7 @@
   </head>
   <body>
     <header class="header">
-      <a href="/homepage">
+      <a href="{% url 'homepage' %}">
       <div class="logo">TaskMate</div>
     </a>
       <nav class="nav-bar">
@@ -20,7 +21,7 @@
           <li class="active"><a href="#">Todo</a></li>
           <li><a href="https://github.com/BishalDe/TaskMate">Project</a></li>
           <li><a href="https://bishalde.github.io/">Team</a></li>
-          {% if 'username' in session %} 
+          {% if request.session.username %} 
           <li><a href="/logout">Logout</a></li>
           {% endif %}
         </ul>

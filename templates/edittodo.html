@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block body %}
-<h1>Hey, {{session['username']}}</h1>
+<h1>Hey, {{ request.session.username }}</h1>
     <main class="main-content">
       <div class="side1">
 
@@ -67,6 +67,7 @@
       <div class="todo-box">
         <div class="task">
           <h3>Page under development</h3>
+          <h4> Delete query for {{ idd }}</h4>
         </div>            
       </div>
     </div>
