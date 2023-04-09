@@ -94,6 +94,22 @@ DATABASES = {
         }  
     }  
 }  
+# DATABASES = {
+#     'default': {
+#         'NAME': 'clustix',
+#         'ENGINE': 'mysql.connector.django',
+#         'HOST': 'db4free.net',
+#         'PORT': 3306,
+#         'USER': 'bishalde',
+#         'PASSWORD': '8299260163',
+#         'OPTIONS': {
+#           'autocommit': True,
+#           'use_oure': True,
+#           'init_command': "SET foo='bar';"
+#         },
+#     }
+# } 
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
