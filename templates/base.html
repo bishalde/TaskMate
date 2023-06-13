@@ -1,38 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">  
         {% block title %}
+            
         {% endblock title %}
-    </title>
-  </head>
-  <body>
-    <header class="header">
-      <a href="{% url 'homepage' %}">
-      <div class="logo">TaskMate</div>
-    </a>
-      <nav class="nav-bar">
-        <ul>
-          <li class="active"><a href="#">Todo</a></li>
-          <li><a href="https://github.com/BishalDe/TaskMate">Project</a></li>
-          <li><a href="https://bishalde.github.io/">Team</a></li>
-          {% if request.session.username %} 
-          <li><a href="/logout">Logout</a></li>
-          {% endif %}
+</head
+<body>
+    <header>
+        <a href="/"><h1 class="logo">TaskMate</h1></a>
+        <ul class="navlinks">
+            <a href="/"><li class="active">Todo</li></a>
+            <a href="https://github.com/BishalDe/TaskMate" target="_blank"><li>Repository</li></a>
+            <a href="#"><li>ContacUs</li></a>
+            <a href="{% url 'logOut' %}"><li>Logout</li></a>
         </ul>
-      </nav>
-      <div class="options">
-        <a href="#"><img src="/static/images/icons8-moon-and-stars-48.png" alt="" /></a>
-        <a href="#"><img src="/static/images/user3d.png" alt="" /></a>
-      </div>
+        <div class="optionsicon">
+            <a href="#"><img src="{% static '/images/crescent.png' %}" alt="Change Theme""></a>
+            <a href="{% url 'profilePage' %}"><img src="{% static '/images/user (1).png' %}" alt="Change Theme""></a>
+        </div>
     </header>
     {% block body %}
         
     {% endblock body %}
+
+</section>
 </body>
 </html>

@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block title %}
+    <title>TaskMate-ProfilePage</title>
+{% endblock title %}
+
+{% block body %}
+    <section class="profilebox">
+        <h1>Profile Details</h1>
+        <div class="profiledetails">
+            <div class="profileimage">
+                <img src="{% static '/images/user.png' %}" alt="User Profile">
+                <input type="file" name="photo" id="photo">
+            </div>
+
+            <label for="fullname">Full Name</label>
+            <input type="text" name="fullname" id="fullname" placeholder="Enter your full name">
+
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+
+            <label for="monile">Mobile Number</label>
+            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number">
+
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio"></textarea>
+
+            <input type="submit" value="Save Changes" />
+
+    </section>
+{% endblock body %}

@@ -1,14 +1,31 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Homepage</h1>
-</body>
-</html>
+{% include 'base.html' %}
+
+{% block title %}
+    <title>TaskMate-LoginPage</title>
+{% endblock title %}
+
+
+{% block body %}
+<!-- style="display:flex;" -->
+<div class="error" >
+    <p>Invalid Username or Password</p>
+    {% load static %}
+    <img src='{% static "/images/reject.png" %}' height="20" width="20" alt="Reject">
+</div>
+<section class="logincontainer">
+    <h1 class="bigheading">TaskMate</h1>
+        <div class="loginbox">
+            <h2>Login</h2>
+            <form action="" method="POST">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" placeholder="Username" required>
+                <label for="password">Password</label>
+                <input dd="password" type="password" name="password" placeholder="Password" required>
+                
+                <a lass="info" href="{% url 'resetPassword' %}">Forgot Password?</a>
+                <button type="submit">Login</button>
+                
+                <p class="info">Don't have an account? <a href='{% url "signUp" %}' class="active">Register</a></p>
+            </form>
+        </div>
+{% endblock body %}

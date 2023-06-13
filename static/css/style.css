@@ -15,513 +15,651 @@
   box-sizing: border-box;
   font-size: var(--fontsize);
   text-decoration: none;
+  list-style: none;
 }
+
 a {
   cursor: pointer;
 }
+
 body {
   background-color: var(--window-bg);
   padding: 30px 70px;
-
-}
-body>h1{
-  display: inline-block;
-  font-size: 2rem;
-  top:50px;
-  padding-top: 3%;
-  padding-left: 3%;
 }
 
 header {
-  background-color: white;
-  width: 100%;
   height: 70px;
+  width: 91vw;
+
+  padding: 0 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  border-radius: 10px;
 }
 
-header > a>div.logo {
-  font-family: "Roboto";
+.logo{
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 23px;
-  color: #9333ea;
+  color: #9333EA;
+
+  background: -webkit-linear-gradient(220deg,#81add8, #9333ea);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.nav-bar > ul {
+
+
+.navlinks{
   display: flex;
   justify-content: space-between;
-
-}
-.nav-bar > ul > li{
-
-  list-style: none;
-}
-.nav-bar > ul > li>a {
-  margin: 0 30px;
-  font-family: "Roboto";
-  font-size: 1.3rem;
-  line-height: 19px;
-  color: #6b7280;
-}
-.nav-bar > ul > li.active {
-  color: #9333ea;
+  align-items: center;
 }
 
-.options > a {
-  margin: 0 10px;
-}
-.options > a > img {
-  height: 40px;
-  width: 40px;
+.navlinks li{
+  margin: 15px;
+  font-size: 1.2rem;
+  color: #6B7280;
 }
 
-.main-content {
-  margin: 4% 0% 4% 2%;
-  width: 100%;
+.navlinks li.active{
+  color: #9333EA;
+}
+
+
+.optionsicon img{
+  height: 45px;
+  margin: 5px;
+  width: 45px;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+
+/* HOVER section-----*/
+.logo:hover{
+  color: #9333EA;
+  scale: 1.1;
+}
+.navlinks li:hover{
+  color: #9333EA;
+  scale: 1.1;
+}
+
+.optionsicon img:hover{
+  scale: 1.1;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+.error{
   display: flex;
-  flex-direction: row;
+  background-color: red;
+  color: white;
+  font-size: 1.3rem;
+  margin: 10px 0px;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: space-between;
+  position: absolute;
+  width:25%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: all .4s ease-in-out;
+
+  display: none;
 }
 
-.main-content > .side1 {
+.error img{
+  height: 20px;
+  width: 20px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+
+/*LOGIN Section*/
+
+.logincontainer{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logincontainer h1{
+  font-size: 6rem;
+  background: -webkit-linear-gradient(2000deg,#81add8, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.loginbox{
+  height: 70vh;
+  margin: 40px;
+  width: 30vw;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.loginbox h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.loginbox form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.loginbox form label{
+  font-size: 1.1rem;
+  color: #000000;
+  margin:2px;
+}
+
+.loginbox form input{
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+  padding: 10px;
+  font-size: 1rem;
+
+  margin-bottom: 20px;
+}
+
+.loginbox form input:focus{
+  outline: none;
+  border: 1px solid #9333EA;
+}
+
+.loginbox form a{
+  font-size: 1rem;
+  color: #6B7280;
+  margin:10px 0px;
+}
+
+.loginbox form button{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9333EA;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.loginbox form button:hover{
+  background-color: #81add8;
+}
+
+.loginbox form .info{
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 10px 0px;
+}
+
+.loginbox form  a{
+  color: #9333EA;
+}
+
+
+/*SIGNUP Section*/
+.signupcontainer{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.signupcontainer h1{
+  font-size: 6rem;
+  background: -webkit-linear-gradient(2000deg,#81add8, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.signupbox{
+  height: 70vh;
+  margin: 40px;
+  width: 30vw;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.signupbox h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.signupbox form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.signupbox form label{
+  font-size: 1.1rem;
+  color: #000000;
+  margin:2px;
+}
+
+.signupbox form input{
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+  padding: 10px;
+  font-size: 1rem;
+
+  margin-bottom: 15px;
+}
+
+.signupbox form input:focus{
+  outline: none;
+  border: 1px solid #9333EA;
+}
+
+.signupbox form a{
+  font-size: 1rem;
+  color: #6B7280;
+  margin:10px 0px;
+}
+
+.signupbox form button{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9333EA;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.signupbox form button:hover{
+  background-color: #81add8;
+}
+
+.signupbox form .info{
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 10px 0px;
+}
+
+.signupbox form  a{
+  color: #9333EA;
+}
+
+
+/*Reset Password Section*/
+.resetcontainer{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.resetcontainer h1{
+  font-size: 6rem;
+  background: -webkit-linear-gradient(2000deg,#81add8, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.resetbox{
+  height: 70vh;
+  margin: 40px;
+  width: 30vw;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.resetbox h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.resetbox form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.resetbox form label{
+  font-size: 1.1rem;
+  color: #000000;
+  margin:2px;
+}
+
+.resetbox form input{
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+  padding: 10px;
+  font-size: 1rem;
+
+  margin-bottom: 15px;
+}
+
+.resetbox form input:focus{
+  outline: none;
+  border: 1px solid #9333EA;
+}
+
+.resetbox form a{
+  font-size: 1rem;
+  color: #6B7280;
+  margin:10px 0px;
+}
+
+.resetbox form button{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9333EA;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.resetbox form button:hover{
+  background-color: #81add8;
+}
+
+.resetbox form .info{
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 10px 0px;
+}
+
+.resetbox form  a{
+  color: #9333EA;
+}
+
+
+/*PROFILE PAGE*/
+.profilebox{
+  height: auto;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
   display: flex;
   flex-direction: column;
 }
-.main-content>.side1>h1{
-  display: inline;
+
+.profilebox h1{
   font-size: 2rem;
-}
-.main-content > .side1 > a > .menu {
-  padding: 20px;
-  width: 20vw;
-  margin-top: 2%;
-  border-radius: 5px;
-}
-.main-content > .side1 > a > .menu > svg {
-  float: left;
-}
-
-.main-content > .side1 > a > .menu > h3 {
-  margin: 0 40px;
-  font-size: 1.3rem;
-}
-
-.main-content > .side1 > a > .menu.active,
-.main-content > .side1 > a > .menu:hover {
-  background: rgba(147, 51, 234, 0.06);
-  color: #9333ea;
-  transition: 0.5s ease;
-}
-.main-content > .side1 > a {
-  color: #6b7280;
-}
-
-.main-content > .side1 > a.down {
-  margin-top: 85%;
-}
-
-.main-content > .side2 {
-  background-color: white;
-  height: 80vh;
-  width: 65vw;
-  border-radius: 10px;
-  margin: 0 2%;
-}
-.side2 > .todo-box {
-  height: 60vh;
-  width: 65vw;
-  overflow: scroll;
-}
-.side2 > .todo-box::-webkit-scrollbar{
-  visibility: hidden;
-}
-.side2 .task {
-  margin: 1.2% 2%;
-  padding: 2%;
-  position: relative;
-}
-.task>.btns{
-  display: block;
-  float: right;
-}
-.task >.btns>a>svg {
-  padding: 4px;
-  height: 30%;
-  width: 30%;
-  float: right;
-  position: relative;
-  margin-top: -30px;
-}
-.task > h3 {
-  font-family: "Roboto";
-  font-size: 2rem;
-  margin-bottom: 3px;
-  color: #404040;
-}
-.task > h5 {
-  font-family: "Roboto";
-  font-size: 1.2rem;
-  color: black;
-  display: inline-block;
-}
-.task > a {
-  margin: 0 0.5%;
-}
-
-.side2>form> input[type=text]{
-    font-family: var(--fontstyle);
-    font-size: 1.5rem;
-    display: inline-block;
-    margin-top: 1%;
-    margin-left: 3%;
-    margin-right: auto;
-    width: 80%;
-    padding: 10px 10px;
-    background: #F3F3F3;
-    border-radius: 5px;
-    border-width: 0px;
-    color: #9333ea;
-}
-
-.side2>form>input[type=date],input[type=time]{
-  font-family: var(--fontstyle);
-  font-size: 1.5rem;
-  display: inline-block;
-  margin-top: 1%;
-  margin-left: 3%;
-  margin-right: auto;
-  width: 30%;
-  padding: 10px 10px;
-  background: #F3F3F3;
-  border-radius: 5px;
-  border-width: 0px;
-  color: #9333ea;
-}
-
-.side2>form>label{
-  font-family: "Roboto";
-  font-size: 1.3rem;
+  margin-bottom: 20px;
   color: #000000;
-  margin: 10px;
 }
 
-.side2 >form>input[type=file],input[type=submit]{
-  display: none;
+.profilebox .profileimage{
+  margin: 10px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
-.side2 >form>input[type=date],input[type=time]:hover{
-  border: 2px solid #9333ea;
+.profilebox .profileimage img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
-.side2 >form>input[type=text]:hover{
-    border: 2px solid #9333ea;
+.profilebox label{
+  margin: 10px 50px;
+  font-size: 1.1rem;
+  color: #000000;
+  display: block;
 }
 
-.side2 >form>select{
-  padding: 10px 10px;
-  background: #F3F3F3;
+.profilebox input[type="text"],.profilebox input[type="email"],.profilebox input[type="tel"],.profilebox textarea{
+  height: 40px;
+  width: 90%;
+  max-width: 90%;
+  margin: 0px 50px;
   border-radius: 5px;
-  border-width: 0px;
-  color: #9333ea;
+  border: 1px solid #6B7280;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
-.side2 >form>select:hover{
-  border: 2px solid #9333ea;
-}
-.side2 >form>input[type=submit]{
-  display: none;
-}
-.side2 >form>label>svg{
-    display: inline-block;
-}
-.error-message{
-  color: white;
-  background-color: red;
-  height: 5vh;
-  width: 50vw;
-  border-radius: 10px;
-  display: block;
-  margin: auto;
-  margin-top: 4%;
-  padding: 1%;
 
+.profilebox input[type="text"]:focus,.profilebox input[type="email"]:focus,.profilebox input[type="tel"]:focus,.profilebox textarea:focus{
+  outline: none;
+  border: 1px solid #9333EA;
 }
-.login-box{
-  background-color: white;
-  height: 75vh;
-  width: 50vw;
-  border-radius: 10px;
-  display: block;
-  margin: auto;
-  margin-top: 4%;
-  padding: 5%;
-}
-.login-box h1{
-  font-family: "Roboto";
-  padding-top: 2%;
-  text-align: center;
-  font-size: 3rem;
-  color: black;
-}
-.login-box label{
-  display: block;
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  color: #404040;
-  margin-left: 5%;
-  margin-bottom: 2%;
+
+.profilebox input[type="submit"]{
+  height: 40px;
+  width: auto;
+  margin: 0px 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9333EA;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+
   
 }
-.login-box input[type="text"],input[type="password"],input[type="email"]{
-  font-family: var(--fontstyle);
-  font-size: 1.5rem;
-  display: block;
-  margin: auto;
-  width: 90%;
-  padding: 10px 10px;
-  background: #F3F3F3;
-  border-radius: 5px;
-  border-width: 0px;
-  color: #9333ea;
-  margin-bottom: 4%;
-}
-.login-box input[type="text"]:hover,input[type="password"]:hover,input[type="email"]:hover{
-  border: 2px solid #9333ea;
+
+
+.bigheading:hover{
+  transition: all .5s ease;
+  scale: 1.3;
 }
 
-.login-box .reset-password{
-  margin-left: 5%;
-  margin-bottom: 2%;
-  display: block;
-  font-family: "Roboto";
-  font-size: 1.2rem;
-  color: #9333ea;
-}
+/* ################################ */
+/*    Responsive media queries      */
 
-.login-box .btnss{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-
-}
-.login-box>form>.btnss>button,.login-box>form>.btnss>a{
-  padding: 2%;  
-  width: 80px;
-  border-radius: 10%;
-  border-width: 0;
-  background-color: #9333ea;
-  color: white;
-  margin: 2%;
-}
-.login-box>form>.btnss>a.ress{
-  background-color: red;
-
-}
-
-
-@media screen and (max-width:900px) {
-      :root{
-        --fontsize: 11px;
-      }
-
-      body {
-        padding: 20px 20px;
-      }
-
-      header {
-        width: 100%;
-        height: 70px;
-        padding: 0 15px;
-
-      }
-
-      .nav-bar > ul > li>a {
-        margin: 0 10px;
-
-      }
-
-      .options > a {
-        margin: 0 10px;
-      }
-
-      .options > a > img {
-        height: 30px;
-        width: 30px;
-      }
-
-      .error-message{
-        width: 60vw;
-        margin-top: 3%;
-        padding: 2%;
-      
-      }
-      .login-box{
-        width: 60vw;
-        margin-top: 3%;
-      }
-
-}
-
-
-
-@media screen and (max-width:600px) {
-  :root{
-    --fontsize: 11px;
+@media screen and (max-width: 1100px){
+  body {
+    padding: 30px 50px;
   }
 
+  header{
+    padding: 0 10px;
+  }
+
+  .logo{
+    font-size: 1.5rem;
+  }
+
+
+
+  .optionsicon img{
+    height: 25px;
+    margin: 3px;
+    width: 25px;
+  }
+
+  .error p{
+    font-size: 0.8rem;
+    padding: 5px;
+
+  }
+
+  .logincontainer h1{
+    font-size: 4rem;
+    margin-left: 20px;
+    background: -webkit-linear-gradient(2000deg,#81add8, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+  }
+
+  .loginbox{
+    width: 40vw;
+    padding: 30px;
+
+  }
+
+  .loginbox form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .signupcontainer h1{
+    font-size: 4rem;
+    margin-left: 20px;
+  }
+
+  .signupbox{
+    height: 72vh;
+    width: 45vw;
+    padding: 20px;
+
+  }
+
+  .resetcontainer h1{
+    font-size: 4rem;
+    margin-left: 20px;
+  }
+
+  .resetbox{
+    height: 72vh;
+    width: 45vw;
+    padding: 20px;
+
+  }
+
+}
+
+@media screen and (max-width: 700px){
   body {
     padding: 10px 10px;
   }
 
-  header {
+  header{
+    height: 70px;
     width: 100%;
-    height: 60px;
-    padding: 0 15px;
-
+    padding: 0 10px;
   }
 
-  .nav-bar > ul > li>a {
-    margin: 0 4px;
-
-  }
-
-  .options > a {
-    margin: 0 2px;
-  }
-
-  .options > a > img {
-    height: 25px;
-    width: 25px;
-  }
-
-  .error-message{
-    height: 30px;
-    width: 80vw;
-    margin-top: 10%;
-    padding: px;
-  
-  }
-  .login-box{
-    width: 80vw;
-    margin-top: 10%;
-    height: 400px;
-  }
-
-  .login-box h1{
-    font-family: "Roboto";
-    padding-top: 30px;
-    text-align: center;
-    font-size: 3rem;
-    color: black;
-  }
-  .login-box>form>.btnss>button,.login-box>form>.btnss>a{
-    padding: 5%;  
-    width: 90px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;;
-    border-width: 0;
-    background-color: #9333ea;
-    color: white;
-    margin: 2%;
-    margin-top: 20px;
-  }
-  .main-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .main-content > .side1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom:8px;
-  }
-
-  body>h1{
-    display: inline-block;
-    font-size: 2rem;
-    top:50px;
-    padding-top: 3%;
-    padding-left: 3%;
-  }
-  .main-content > .side1 > a > .menu > svg {
-    float: left;
-    height: 15px;
-    width: 15px;
-  }
-
-  .main-content > .side1 > a.down {
-    margin-top: 0%;
-  }
-  .main-content > .side1 > a > .menu {
-    padding: 10px;
-    width: 20vw;
-    border-radius: 5px;
-  }
-
-  .main-content > .side1 > a > .menu > h3 {
-      margin: 0 20px;
-      font-size: 1rem;
-  }
-
-  .main-content > .side2 {
-    background-color: white;
-    height: 80vh;
-    width: 90vw;
-    border-radius: 10px;
-    margin: 0 1%;
-  }
-
-  .side2 > .todo-box {
-    height: 60vh;
-    width: 90vw;
-    overflow: scroll;
-  }
-
-  .task > h3 {
-    font-family: "Roboto";
-    font-size: 1.7rem;
-    margin-bottom: 3px;
-    color: #404040;
-  }
-
-  .task > h5 {
-    font-family: "Roboto";
+  .logo{
     font-size: 1.2rem;
-    color: black;
-    display: inline-block;
   }
 
-  .side2>form> input[type=text]{
-    font-size: 1.5rem;
-    margin-top: 2%;
-    margin-left: 3%;
-    width: 70%;
-    padding: 8px 8px;
+  .navlinks li{
+    font-size: .7rem;
+    margin: 5px;
   }
 
-  .side2>form>input[type=date],input[type=time]{
-    font-size: 1rem;
-    width: 25%;
-    padding: 8px 8px;
+  .optionsicon img{
+    height: 25px;
+    margin: 1px;
+    width:25px;
+  }
+  .error{
+    width: 93%;
+    padding:4px;
+
+  }
+  .error p{
+    font-size: 0.7rem;
   }
 
-  .side2 >form>label>svg{
-    height: 20px;
-    width: 20px;
+  .logincontainer h1{
+    display: none;
   }
-  
-  .side2>form>label{
-    font-family: "Roboto";
-    font-size: 1rem;
-    color: #000000;
+
+  .loginbox{
+    margin: 30px;
+    width: 90vw;
+  }
+
+  .signupcontainer h1{
+    display: none;
+  }
+
+  .signupbox{
+    margin: 30px;
+    width: 90vw;
+  }
+
+  .resetcontainer h1{
+    display: none;
+  }
+
+  .resetbox{
+    margin: 30px;
+
+    width: 90vw;
+  }
+
+  .profilebox{
+    margin: 10px;
+    width: 90vw;
     margin: 10px;
   }
 
+  .profiledetails{
+    margin: 10px;
+  }
 
+  .profilebox label{
+    margin: 10px 3px;
+    font-size: 1.rem;
+    color: #000000;
+    display: block;
+  }
+  
+  .profilebox input[type="text"],.profilebox input[type="email"],.profilebox input[type="tel"],.profilebox textarea{
+    margin: 0px 3px;
+    margin-bottom: 10px;
+  }
+
+  .profilebox h1{
+    font-size: 1.5rem;
+  }
+
+  .profilebox .profileimage{
+    margin: 5px 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+  
+  .profilebox .profileimage img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }
+
+  
