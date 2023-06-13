@@ -14,15 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from TaskMate import views
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.login),
-    path('signup/',views.signup,name='signup'),
-    path('edit/<int:id>',views.editTodo,name='editTodo'),
-    path('delete/<int:idd>',views.delete,name='delete'),
-    path('logout/',views.logout,name='logout'),
-    path('homepage/',views.homepage,name='homepage'),
+    path('', include('TodoApp.urls')),
 ]
