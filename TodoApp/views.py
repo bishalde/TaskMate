@@ -1,28 +1,97 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import *
 
 # Create your views here.
 def login(request):
-    data={}
-    return render(request,'login.html',data)
+    if request.session.has_key('username'):
+        return redirect('homepage')
+    else:
+        data = {'error': None }
+        if request.session.has_key('userdata'):
+            return redirect('homepage')
+
+        else:
+            if request.method == 'POST':
+                username = request.POST['username']
+                password = request.POST['password']
+
+                x = TaskMate_userDetails.objects.filter(username=username, password=password).values().exists()
+                if x:
+                    request.session['username']=username
+                    return redirect('homepage')
+                else:
+                    data['error'] = "Invalid Credentials"
+                    return render(request, 'login.html', data)
+
+            return render(request, 'login.html')
 
 def homepage(request):
-    data={}
-    return render(request,'homepage.html',data)
+    if request.session.has_key('username'):
+        data={}
+        return render(request,'homepage.html',data)
+    else:
+        return redirect('login')
 
 def signUp(request):
     data={}
-    data["error"]="Please enter valid username and password"
-    return render(request,'signup.html',data)
+    if request.method=="POST":
+        username=request.POST.get("username")
+        email=request.POST.get("email")
+        password=request.POST.get("password")
+        confirmpassword=request.POST.get("confirmpassword")
+        if password!=confirmpassword:
+            data["error"]="Passwords do not match"
+            return render(request,'signup.html',data)
+        else:
+            if TaskMate_userDetails.objects.filter(username=username).exists():
+                data["error"]="Username already exists"
+                return render(request,'signup.html',data)
+            elif TaskMate_userDetails.objects.filter(email=email).exists():
+                data["error"]="Email already exists"
+                return render(request,'signup.html',data)
+            else:
+                try:
+                    user=TaskMate_userDetails(username=username,email=email,password=password)
+                    user.save()
+                    data["error"]="Account created successfully"
+                    return render(request,'signup.html',data)
+                except:
+                    data["error"]="Something went wrong"
+                    return render(request,'signup.html',data)
+    else:
+        data["error"]=None
+        return render(request,'signup.html',data)
 
 def resetPassword(request):
     data={}
     return render(request,'resetPassword.html',data)
 
 def profilePage(request):
-    data={}
-    return render(request,'profilePage.html',data)
+    if request.session.has_key('username'):
+        if request.method == 'POST':
+
+            profilePic=request.POST.get('photo')
+            if profilePic=='':
+                x=TaskMate_userDetails.objects.filter(username=request.session['username']).values()
+                profilePic=x[0]['profilePic']
+
+            print(profilePic)
+            fullName=request.POST.get('fullname')
+            mobile=request.POST.get('mobile')
+            bio=request.POST.get('bio')
+
+            try:
+                TaskMate_userDetails.objects.filter(username=request.session['username']).update(profilePic=profilePic,fullName=fullName,mobileNumber=mobile,bio=bio)
+            except Exception as e:
+                print(e)
+
+        x=TaskMate_userDetails.objects.filter(username=request.session['username']).values()
+        data={'details':x[0]}
+        return render(request,'profilePage.html',data)
+    else:
+        return redirect('login')
 
 def logOut(request):
-    data={}
-    return render(request,'login.html',data)
+    del request.session['username']
+    return redirect('login')
 

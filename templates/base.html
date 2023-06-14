@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">  
-        {% block title %}
-            
+    {% block title %}
+    
         {% endblock title %}
 </head
 <body>
@@ -15,9 +15,11 @@
         <a href="/"><h1 class="logo">TaskMate</h1></a>
         <ul class="navlinks">
             <a href="/"><li class="active">Todo</li></a>
-            <a href="https://github.com/BishalDe/TaskMate" target="_blank"><li>Repository</li></a>
-            <a href="#"><li>ContacUs</li></a>
+            <a href="https://github.com/BishalDe/TaskMate" target="_blank"><li>Project</li></a>
+            <a href="admin/" target="_blank"><li>Admin</li></a>
+            {% if request.session.username %}
             <a href="{% url 'logOut' %}"><li>Logout</li></a>
+            {% endif %}
         </ul>
         <div class="optionsicon">
             <a href="#"><img src="{% static '/images/crescent.png' %}" alt="Change Theme""></a>
@@ -27,7 +29,8 @@
     {% block body %}
         
     {% endblock body %}
-
+    
 </section>
+<script src="{% static '/js/script.js' %}"></script>
 </body>
 </html>

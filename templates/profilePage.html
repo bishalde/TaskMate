@@ -9,27 +9,30 @@
     <section class="profilebox">
         <h1>Profile Details</h1>
         <div class="profiledetails">
+            <form action="/profilePage/" method="post">
+                {% csrf_token %}
             <div class="profileimage">
-                <img src="{% static '/images/user.png' %}" alt="User Profile">
+                <img src="{% static details.profilePic  %}" alt="User Profile">
                 <input type="file" name="photo" id="photo">
             </div>
 
             <label for="fullname">Full Name</label>
-            <input type="text" name="fullname" id="fullname" placeholder="Enter your full name">
+            <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" value="{{ details.fullName }}">
 
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username">
+            <input type="text" name="username" id="username" placeholder="Enter your username" value="{{ details.username }}" disabled>
 
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <input type="email" name="email" id="email" placeholder="Enter your email" value="{{ details.email }}" disabled>
 
-            <label for="monile">Mobile Number</label>
-            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" value="{{ details.mobileNumber }}">
 
             <label for="bio">Bio</label>
-            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio"></textarea>
+            <textarea name="bio" id="bio" placeholder="Enter your bio" >{{ details.bio }}</textarea>
 
             <input type="submit" value="Save Changes" />
-
+        </form>
+        </div>
     </section>
 {% endblock body %}

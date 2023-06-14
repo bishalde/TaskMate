@@ -6,25 +6,39 @@
 {% endblock title %}
 
 {% block body %}
-    
 
-    <div class="error">
-        <p>User Account Created.!</p>
-        <img src="/static/images/reject.png" alt="Reject">
-    </div>
+{% if error != None  and error == "Account created successfully" %}
+<div id="noti" class="error" style="display: flex; background-color: green;">
+    <p>{{ error }}</p>
+    <img id='dismiss'src="/static/images/reject.png" alt="Reject">
+</div>  
+{% else %}
+    {% if error != None %}
+    <div id="noti" class="error" style="display: flex; background-color: red;">
+        <p>{{ error }}</p>
+        <img id='dismiss'src="/static/images/reject.png" alt="Reject">
+    </div>  
+    {% endif %}
+{% endif %}
     <section class="signupcontainer">
         <h1 class="bigheading">TaskMate</h1>
         <div class="signupbox">
             <h2>Register Here</h2>
             <form action="" method="POST">
+                {% csrf_token %}
                 <label for="username">Username</label>
-                <input id="username" type="text" name="username" placeholder="Username" required>
+                <input id="username" type="text" name="username" placeholder="Username" required maxlength="30">
+
+
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" placeholder="Email" required>
+
+
                 <label for="password">Password</label>
-                <input id="password" type="password" name="password" placeholder="Password" required>
+                <input id="password" type="password" name="password" placeholder="Password" required maxlength="30" minlength="6">
+
                 <label for="confirmpassword">Confirm Password</label>
-                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="Confirm Password" required>
+                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="Confirm Password" required maxlength="30" minlength="6">
                 <button type="submit">SignUp</button>
                 <p class="info">Already have an account? <a href="{% url 'login' %}" class="active">Login</a></p>
         </div>

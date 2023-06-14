@@ -20,3 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('TodoApp.urls')),
 ]
+
+admin.site.site_header = "TaskMate Admin"
+admin.site.site_title = "TaskMate Admin Portal"
+admin.site.index_title = "Welcome to TaskMate Portal"

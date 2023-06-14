@@ -1,3 +1,4 @@
+{% load static %}
 {% include 'base.html' %}
 
 {% block title %}
@@ -6,21 +7,24 @@
 
 
 {% block body %}
-<!-- style="display:flex;" -->
-<div class="error" >
-    <p>Invalid Username or Password</p>
-    {% load static %}
+
+{% if error != None %}
+    <div class="error" style="display: flex;" >
+    <p>{{ error }}</p>
     <img src='{% static "/images/reject.png" %}' height="20" width="20" alt="Reject">
-</div>
+    </div>
+{% endif %}
+
 <section class="logincontainer">
     <h1 class="bigheading">TaskMate</h1>
         <div class="loginbox">
             <h2>Login</h2>
             <form action="" method="POST">
+                {% csrf_token %}
                 <label for="username">Username</label>
-                <input id="username" type="text" name="username" placeholder="Username" required>
+                <input id="username" type="text" name="username" placeholder="Username" required maxlength="30">
                 <label for="password">Password</label>
-                <input dd="password" type="password" name="password" placeholder="Password" required>
+                <input dd="password" type="password" name="password" placeholder="Password" required minlength="6" maxlength="30">
                 
                 <a lass="info" href="{% url 'resetPassword' %}">Forgot Password?</a>
                 <button type="submit">Login</button>

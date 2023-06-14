@@ -1,0 +1,9 @@
+{% include "base.html" %}
+{% block title %}
+    <title>Taskmate-HomePage</title>
+{% endblock title  %}
+{% block body %}
+<h1>TaskMate</h1>
+<h2>HomePage</h2>
+<h1>{{ request.session.username }}</h1>
+{% endblock body %}

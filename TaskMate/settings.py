@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["*",".vercel.app"]
 # Application definition
 
 INSTALLED_APPS = [
+    'TodoApp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -87,11 +88,14 @@ WSGI_APPLICATION = 'TaskMate.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'TaskMate',
-        'HOST': "mongodb+srv://bishalde:bishalde@taskmate.mu1qkca.mongodb.net/?retryWrites=true&w=majority",
-    }
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'TaskMateDatabase',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb+srv://bishalde:bishalde@taskmatedatabase.4blhhtp.mongodb.net/?retryWrites=true&w=majority'
+            }  
+        }
 }
 
 # Password validation
