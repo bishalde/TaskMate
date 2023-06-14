@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">  
+    <script src="{% static '/js/script.js' %}"></script>
     {% block title %}
     
-        {% endblock title %}
+    {% endblock title %}
 </head
 <body>
     <header>
@@ -22,7 +23,7 @@
             {% endif %}
         </ul>
         <div class="optionsicon">
-            <a href="#"><img src="{% static '/images/crescent.png' %}" alt="Change Theme""></a>
+            <a><img src="{% static '/images/crescent.png' %}" alt="Change Theme""></a>
             <a href="{% url 'profilePage' %}"><img src="{% static '/images/user (1).png' %}" alt="Change Theme""></a>
         </div>
     </header>
@@ -30,7 +31,6 @@
         
     {% endblock body %}
     
-</section>
-<script src="{% static '/js/script.js' %}"></script>
+
 </body>
 </html>

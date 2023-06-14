@@ -55,7 +55,7 @@ ROOT_URLCONF = 'TaskMate.urls'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static','static/css/','static/images/',
+    BASE_DIR / 'static','static/css/','static/images/','static/js/',
 ]
 
 TEMPLATES = [

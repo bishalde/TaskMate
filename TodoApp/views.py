@@ -26,8 +26,31 @@ def login(request):
             return render(request, 'login.html')
 
 def homepage(request):
+    data={}
     if request.session.has_key('username'):
-        data={}
+        username = request.session['username']
+        if(request.method == "POST"):
+            q_data = request.POST
+            user=request.session['username']
+            date=q_data.get('date')
+            time=q_data.get('time')
+            priority=q_data.get('priority')
+            description=q_data.get('description')
+
+            try:
+                task=TaskMate_taskDetails(userName=user,deadlineDate=date,deadlineTime=time,priority=priority,description=description)
+                task.save()
+            except Exception as e:
+                print(e)
+
+
+        try:
+            orderbyList = ['deadlineDate','priority','deadlineTime']
+            x=TaskMate_taskDetails.objects.filter(userName=username).order_by(*orderbyList).values()
+            data={'tasks':x}
+        except Exception as e:
+            print(e)
+
         return render(request,'homepage.html',data)
     else:
         return redirect('login')
@@ -95,3 +118,6 @@ def logOut(request):
     del request.session['username']
     return redirect('login')
 
+def delete(request,idd):
+    TaskMate_taskDetails.objects.filter(taskId=idd,userName=request.session["username"]).delete()
+    return redirect('homepage')
