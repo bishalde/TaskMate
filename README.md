@@ -6,7 +6,6 @@
 
 <div align="center">
 
-<div align="center">
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](http://thismypc.com/)
 </div>
