@@ -3,16 +3,17 @@
   " Unlock Your Productivity with Our Online To-Do Powerhouse! "<br/>
   <a href="https://taskmatee.vercel.app" target=""_blank> 1. https://taskmatee.vercel.app</a><br />
   <a href="https://taskmate-shb4.onrender.com" target=""_blank> 2. https://taskmate-shb4.onrender.com</a>
+</h1>
 
 <div align="center">
-
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](http://thismypc.com/)
 </div>
-<div align="center">
-<img src="https://img.shields.io/badge/Python-7.9.2-red?style=for-the-badge&logo=python" alt="Python version" />&nbsp;<img src="https://img.shields.io/badge/Django-3.2.19-darkgreen?style=for-the-badge&logo=django" alt="Django version" />&nbsp;<img src="https://img.shields.io/badge/MongoDB-6.0-yellow?style=for-the-badge&logo=mongodb" alt="MongoDB version" />&nbsp;<img src="https://img.shields.io/badge/HTML-ornage?style=for-the-badge&logo=html" alt="HTML version" />&nbsp;<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css" alt="CSS version" />&nbsp;<img src="https://img.shields.io/badge/JavaScript-green?style=for-the-badge&logo=javasscript" alt="JS version" />&nbsp;</p>
 
 <div align="center">
+<img src="https://img.shields.io/badge/Python-7.9.2-red?style=for-the-badge&logo=python" alt="Python version" />&nbsp;<img src="https://img.shields.io/badge/Django-3.2.19-darkgreen?style=for-the-badge&logo=django" alt="Django version" />&nbsp;<img src="https://img.shields.io/badge/MongoDB-6.0-yellow?style=for-the-badge&logo=mongodb" alt="MongoDB version" />&nbsp;<img src="https://img.shields.io/badge/HTML-ornage?style=for-the-badge&logo=html" alt="HTML version" />&nbsp;<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css" alt="CSS version" />&nbsp;<img src="https://img.shields.io/badge/JavaScript-green?style=for-the-badge&logo=javasscript" alt="JS version" />&nbsp;</p>
+</div>
+
 
 ## Repo Status ✳️
 
@@ -33,7 +34,8 @@
 
  ![Visitors](https://api.visitorbadge.io/api/visitors?path=bishalde/TaskMate%20&countColor=%2523263759&style=for-the-badge)
  </p>
-
+ 
+</div>
 ## Description 🌵
 
 ##### Introducing TaskMate: Your Ultimate Task Management Companion
@@ -93,8 +95,6 @@ One of the standout features of TaskMate is its seamless integration with MongoD
 
 <a href="https://www.buymeacoffee.com/bishalde" target='_blank'><img height="60px" width="200px" src="https://img.shields.io/badge/buymeacoffee-yellow?style=for-the-badge&logo=buymeacoffee&logocolor=white" /></a>&nbsp;<a href="https://ko-fi.com/bishalde" target='_blank'><img height="60px" width="150px" src="https://img.shields.io/badge/kofi-red?style=for-the-badge&logo=kofi"/></a>
 
-&nbsp;
-&nbsp;
 
 ## Our Contributors ✨
 
