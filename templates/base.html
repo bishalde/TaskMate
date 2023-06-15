@@ -17,7 +17,7 @@
         <ul class="navlinks">
             <a href="/"><li class="active">Todo</li></a>
             <a href="https://github.com/BishalDe/TaskMate" target="_blank"><li>Project</li></a>
-            <a href="admin/" target="_blank"><li>Admin</li></a>
+            <a href="/admin/" target="_blank"><li>Admin</li></a>
             {% if request.session.username %}
             <a href="{% url 'logOut' %}"><li>Logout</li></a>
             {% endif %}

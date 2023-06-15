@@ -45,7 +45,7 @@ def homepage(request):
 
 
         try:
-            orderbyList = ['deadlineDate','priority','deadlineTime']
+            orderbyList = ['deadlineDate','deadlineTime','priority']
             x=TaskMate_taskDetails.objects.filter(userName=username).order_by(*orderbyList).values()
             data={'tasks':x}
         except Exception as e:
@@ -121,3 +121,26 @@ def logOut(request):
 def delete(request,idd):
     TaskMate_taskDetails.objects.filter(taskId=idd,userName=request.session["username"]).delete()
     return redirect('homepage')
+
+def editTodo(request,idd):
+    data={'idd':idd}
+    user=request.session['username']
+    if request.method == 'POST':
+        q_data = request.POST
+        date=q_data.get('date')
+        time=q_data.get('time')
+        priority=q_data.get('priority')
+        description=q_data.get('description')
+
+        try:
+            TaskMate_taskDetails.objects.filter(taskId=idd,userName=user).update(deadlineDate=date,deadlineTime=time,priority=priority,description=description )
+
+            return redirect('homepage')
+
+        except Exception as e:
+            print(e)
+
+
+    x=TaskMate_taskDetails.objects.filter(taskId=idd,userName=user).values()
+    data['todo']=x[0]
+    return render(request,"edittodo.html",data)

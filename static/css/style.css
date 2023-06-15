@@ -941,4 +941,7 @@ header {
   }
 }
 
-  
+
+input[type=submit].profbtn{
+  display: block;
+}
