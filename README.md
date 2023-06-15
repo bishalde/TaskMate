@@ -1,7 +1,9 @@
 <h1 align="center">
   <img alt="cgapp logo" src="Screenshots/TaskMate-LoginPage-removebg-preview.png" width="600px" height="200px"/><br/>
-  Unlock Your Productivity with Our Online To-Do Powerhouse!<br/>
-  <a href="https://taskmatee.vercel.app" target=""_blank>https://taskmatee.vercel.app</a>
+  " Unlock Your Productivity with Our Online To-Do Powerhouse! "<br/>
+  <a href="https://taskmatee.vercel.app" target=""_blank> 1. https://taskmatee.vercel.app</a><br />
+  <a href="https://taskmate-shb4.onrender.com" target=""_blank> 2. https://taskmate-shb4.onrender.com</a>
+
 </h1>
 
 <div align="center">
@@ -10,7 +12,10 @@
 </div>
 <p align="center"><img src="https://img.shields.io/badge/Python-7.9.2-red?style=for-the-badge&logo=python" alt="Python version" />&nbsp;<img src="https://img.shields.io/badge/Django-3.2.19-darkgreen?style=for-the-badge&logo=django" alt="Django version" />&nbsp;<img src="https://img.shields.io/badge/MongoDB-6.0-yellow?style=for-the-badge&logo=mongodb" alt="MongoDB version" />&nbsp;<img src="https://img.shields.io/badge/HTML-ornage?style=for-the-badge&logo=html" alt="HTML version" />&nbsp;<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css" alt="CSS version" />&nbsp;<img src="https://img.shields.io/badge/JavaScript-green?style=for-the-badge&logo=javasscript" alt="JS version" />&nbsp;</p>
 
+<div align="center">
+
 ## Repo Status ✳️
+
 <div align="center">
  <img src="https://img.shields.io/github/repo-size/bishalde/TaskMate?style=for-the-badge" />
 	<img src="https://img.shields.io/github/stars/bishalde/TaskMate?style=for-the-badge&color=FBCB0A" />
@@ -35,6 +40,7 @@ With TaskMate, you can effortlessly create, organize, and prioritize your tasks,
 One of the standout features of TaskMate is its seamless integration with MongoDB, a highly scalable and flexible NoSQL database. This integration ensures optimal performance, data security, and allows for effortless synchronization across multiple devices, keeping your tasks up to date, whether you're at home, in the office, or on the go
 
 ## Features 😱
+
 - User registration and authentication.
 - Ability for users to create, read, update and delete tasks.
 - Live previews
@@ -45,16 +51,27 @@ One of the standout features of TaskMate is its seamless integration with MongoD
 ## Screenshots 📷
 
 ##### Login Page
+
 ![Login Page](Screenshots/TaskMate-LoginPage.png)
+
 ##### SignUp Page
+
 ![SignUp Page](Screenshots/TaskMate-SignUp-Page.png)
-##### Reaset Passowrd Page
+
+##### Reset Passowrd Page
+
 ![Reasetpassowrd Page](Screenshots/TaskMate-ResetPassword.png)
+
 ##### Home Page
-![Home Page](Screenshots/TaskMate-HomePage.png)
+
+![Home Page](Screenshots/TaskMate-Homepage.png)
+
 ##### Edit Task Page
+
 ![Edit Task Page](Screenshots/TaskMate-EditTodoPage.png)
+
 ##### Profile Page
+
 ![Profile Page](Screenshots/TaskMate-ProfilePage.png)
 
 ## Contribution Steps
@@ -71,8 +88,8 @@ One of the standout features of TaskMate is its seamless integration with MongoD
 
 ## Give Me A Bow 🏹
 
-<a href="https://www.buymeacoffee.com/bishalde" target='_blank'><img src="https://img.shields.io/badge/buymeacoffee-yellow?style=for-the-badge&logo=buymeacoffee&logoColor=white" height="60" width="300" /></a>&nbsp;
-<a href="https://ko-fi.com/bishalde" target='_blank'><img src="https://img.shields.io/badge/kofi-red?style=for-the-badge&logo=ko-fi&logoColor=white" height="60" width="200" /></a>&nbsp;
+&nbsp;
+&nbsp;
 
 ## Our Contributors ✨
 
