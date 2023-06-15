@@ -4,13 +4,14 @@
   <a href="https://taskmatee.vercel.app" target=""_blank> 1. https://taskmatee.vercel.app</a><br />
   <a href="https://taskmate-shb4.onrender.com" target=""_blank> 2. https://taskmate-shb4.onrender.com</a>
 
-</h1>
+<div align="center">
 
 <div align="center">
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](http://thismypc.com/)
 </div>
-<p align="center"><img src="https://img.shields.io/badge/Python-7.9.2-red?style=for-the-badge&logo=python" alt="Python version" />&nbsp;<img src="https://img.shields.io/badge/Django-3.2.19-darkgreen?style=for-the-badge&logo=django" alt="Django version" />&nbsp;<img src="https://img.shields.io/badge/MongoDB-6.0-yellow?style=for-the-badge&logo=mongodb" alt="MongoDB version" />&nbsp;<img src="https://img.shields.io/badge/HTML-ornage?style=for-the-badge&logo=html" alt="HTML version" />&nbsp;<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css" alt="CSS version" />&nbsp;<img src="https://img.shields.io/badge/JavaScript-green?style=for-the-badge&logo=javasscript" alt="JS version" />&nbsp;</p>
+<div align="center">
+<img src="https://img.shields.io/badge/Python-7.9.2-red?style=for-the-badge&logo=python" alt="Python version" />&nbsp;<img src="https://img.shields.io/badge/Django-3.2.19-darkgreen?style=for-the-badge&logo=django" alt="Django version" />&nbsp;<img src="https://img.shields.io/badge/MongoDB-6.0-yellow?style=for-the-badge&logo=mongodb" alt="MongoDB version" />&nbsp;<img src="https://img.shields.io/badge/HTML-ornage?style=for-the-badge&logo=html" alt="HTML version" />&nbsp;<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css" alt="CSS version" />&nbsp;<img src="https://img.shields.io/badge/JavaScript-green?style=for-the-badge&logo=javasscript" alt="JS version" />&nbsp;</p>
 
 <div align="center">
 
@@ -21,13 +22,18 @@
 	<img src="https://img.shields.io/github/stars/bishalde/TaskMate?style=for-the-badge&color=FBCB0A" />
 	<img src="https://img.shields.io/github/forks/bishalde/TaskMate?style=for-the-badge&color=00C4FF" />
 	<img src="https://img.shields.io/github/contributors/bishalde/TaskMate?style=for-the-badge&color=FF5DA2" />
- <img src="https://img.shields.io/github/last-commit/bishalde/TaskMate?style=for-the-badge&color=54B435" />
+ 	<img src="https://img.shields.io/github/last-commit/bishalde/TaskMate?style=for-the-badge&color=54B435" /> 
 <br>
 	<img src="https://img.shields.io/github/issues/bishalde/TaskMate?style=for-the-badge&color=green" />
 	<img src="https://img.shields.io/github/issues-closed/bishalde/TaskMate?style=for-the-badge&color=FF5403" />
 	<img src="https://img.shields.io/github/issues-pr/bishalde/TaskMate.svg?style=for-the-badge&color=green" />
 	<img src="https://img.shields.io/github/issues-pr-closed/bishalde/TaskMate?style=for-the-badge&color=FF5403" />
-</div><br>
+</div>
+<div align="center">
+ <p> 
+
+ ![Visitors](https://api.visitorbadge.io/api/visitors?path=bishalde/TaskMate%20&countColor=%2523263759&style=for-the-badge)
+ </p>
 
 ## Description 🌵
 
@@ -74,8 +80,6 @@ One of the standout features of TaskMate is its seamless integration with MongoD
 
 ![Profile Page](Screenshots/TaskMate-ProfilePage.png)
 
-## Contribution Steps
-
 ## Social Links 🔗
 
 <p align="center"><a href="https://www.instagram.com/bishal_de/" target='_blank'><img src="https://img.shields.io/badge/Instagram-pink?style=for-the-badge&logo=instagram" /></a>&nbsp;
@@ -87,6 +91,8 @@ One of the standout features of TaskMate is its seamless integration with MongoD
 <a href="https://www.codechef.com/users/bishalde" target='_blank'><img src="https://img.shields.io/badge/Codechef-%23B92B27?style=for-the-badge&logo=Codechef&logoColor=white"/></a>&nbsp;</p>
 
 ## Give Me A Bow 🏹
+
+<a href="https://www.buymeacoffee.com/bishalde" target='_blank'><img height="60px" width="200px" src="https://img.shields.io/badge/buymeacoffee-yellow?style=for-the-badge&logo=buymeacoffee&logocolor=white" /></a>&nbsp;<a href="https://ko-fi.com/bishalde" target='_blank'><img height="60px" width="150px" src="https://img.shields.io/badge/kofi-red?style=for-the-badge&logo=kofi"/></a>
 
 &nbsp;
 &nbsp;

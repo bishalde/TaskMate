@@ -54,10 +54,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'TaskMate.urls'
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static','static/css/','static/images/','static/js/',
-]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -134,8 +130,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static','static/css/','static/images/','static/js/',
+]
+
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+
 MEDIA_URLS ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
