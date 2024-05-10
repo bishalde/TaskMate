@@ -62,6 +62,9 @@ def signUp(request):
         email=request.POST.get("email")
         password=request.POST.get("password")
         confirmpassword=request.POST.get("confirmpassword")
+        if(len(username) == 0):
+            data["error"] = "Username cannot be empty"
+            return render(request,'signup.html',data)
         if password!=confirmpassword:
             data["error"]="Passwords do not match"
             return render(request,'signup.html',data)
