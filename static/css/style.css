@@ -32,6 +32,15 @@ body {
   padding: 30px 70px;
 }
 
+.dark-mode {
+  background-color: #3e4451;
+  color: #ffffff;
+}
+.header-dark {
+  background-color: #9333EA;
+  color: #ffffff;
+}
+
 header {
   height: 70px;
   width: 91vw;
@@ -45,6 +54,23 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.dark-mode header li,
+.dark-mode header a .active
+{
+    color: #ffffff; /* White text color for li and a elements in dark mode */
+}
+.dark-mode .logo {
+  color: #ffffff; /* White color for the logo in dark mode */
+  background: -webkit-linear-gradient(220deg, #81add8, #9333ea);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+}
+
+.dark-mode header a .active {
+  font-weight: bold;
 }
 
 .logo{
@@ -76,6 +102,7 @@ header {
 
 .navlinks li.active{
   color: #9333EA;
+  font-weight: bold;
 }
 
 
@@ -96,8 +123,13 @@ header {
 .navlinks li:hover{
   color: #9333EA;
   scale: 1.1;
+  text-decoration: underline #9333EA;
 }
 
+.dark-mode .navlinks li:hover {
+  color: white;
+  text-decoration: underline;
+}
 .optionsicon img:hover{
   scale: 1.1;
 }
