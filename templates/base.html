@@ -10,8 +10,8 @@
     {% block title %}
     
     {% endblock title %}
-</head
-<body>
+</head>
+<body id="main-body">
     <header>
         <a href="/"><h1 class="logo">TaskMate</h1></a>
         <ul class="navlinks">
@@ -23,8 +23,8 @@
             {% endif %}
         </ul>
         <div class="optionsicon">
-            <a><img src="{% static '/images/crescent.png' %}" alt="Change Theme""></a>
-            <a href="{% url 'profilePage' %}"><img src="{% static '/images/user (1).png' %}" alt="Change Theme""></a>
+            <a><img src="{% static '/images/crescent.png' %}" alt="Change Theme"></a>
+            <a href="{% url 'profilePage' %}"><img src="{% static '/images/user (1).png' %}" alt="Change Theme"></a>
         </div>
     </header>
     {% block body %}
