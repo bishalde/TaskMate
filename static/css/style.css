@@ -272,8 +272,9 @@ header {
 }
 
 .signupbox{
-  height: 70vh;
+  height: 80vh;
   margin: 40px;
+  margin-top: 50px;
   width: 30vw;
   padding: 40px;
   background-color: var(--light-themecolor);
